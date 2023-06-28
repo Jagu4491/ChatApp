@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "463163677126",
+    "project_id": "chat-app-ffab8",
+    "storage_bucket": "chat-app-ffab8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463163677126:android:6b68d31cf6919f966e7ac7",
+        "android_client_info": {
+          "package_name": "com.example.chatapp_with_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "463163677126-8k0vaff2g7hfurjmr8fvkid6aicj5kk1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chatapp_with_firebase",
+            "certificate_hash": "156fec44f9e0a2da8783fb3c34522223e1a80c03"
+          }
+        },
+        {
+          "client_id": "463163677126-p963dkv686liufeispcam49l27rmhacf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiAXLD-MewGBPupBdiPOQEQfwVCjMysjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "463163677126-51scmn6nmo87sraufeedbgdbpu9fs80a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
