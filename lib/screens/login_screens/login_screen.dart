@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../api/api_helper.dart';
 import '../../helper/dialog.dart';
 import '../../main.dart';
 
@@ -22,7 +23,7 @@ class _LoginScreen extends State<LoginScreen>{
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(milliseconds: 500),(){
+    Future.delayed(Duration(seconds: 5),(){
       setState(() {
         _isAnimate=true;
       });
@@ -31,14 +32,23 @@ class _LoginScreen extends State<LoginScreen>{
 
   googleBtnClick(){
     Dialogs.showProgressBar(context);
-    _signInWithGoogle().then((user) {
+    _signInWithGoogle().then((user) async{
       Navigator.pop(context);
       if(user != null) {
         log('nUser:${user.user}');
         log('UserAdditionalInfo:${user.additionalUserInfo}');
 
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        if((await Api.userExists())){
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        }else{
+          await Api.createUser().then((value) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomeScreen()));
+          });
+        }
+
+
       }
 
     });
